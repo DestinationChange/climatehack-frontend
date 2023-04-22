@@ -14,8 +14,8 @@ import NewUserPage from "./pages/NewUserPage"
 import profile from "./pages/Profile";
 
 // COMPONENTS
-import NavBar from "./Components/NavBar";
-import './app.css'
+import NavBar from "./components/NavBar";
+import './App.css'
 import { useState } from "react";
 
 
@@ -26,10 +26,6 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/destinationchange" element={<Index />} />
-          <Route path="/destinationchange/new" element={<New />} />
-          <Route exact path="/destinationchange/:id" element={<Show />} />
-          <Route path="/destinationchange/:id/edit" element={<Edit />} />
           <Route path="*" element={<FourOFour />} />
         </Routes>
       </Router>
