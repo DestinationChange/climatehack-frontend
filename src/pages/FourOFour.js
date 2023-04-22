@@ -1,3 +1,4 @@
+
 export default function Four0Four(){
     return(
         <div>
@@ -6,3 +7,4 @@ export default function Four0Four(){
         </div>
     )
 }
+
