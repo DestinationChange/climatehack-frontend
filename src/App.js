@@ -11,7 +11,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login"
 import NewPosts from "./pages/newPosts";
 import NewUserPage from "./pages/NewUserPage"
-import profile from "./pages/Profile";
+import Profile from "./pages/Profile";
+
 
 // COMPONENTS
 import NavBar from "./components/NavBar";
@@ -27,6 +28,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="*" element={<FourOFour />} />
+          <Route path='/about' element={<About/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+         
         </Routes>
       </Router>
     </div>
