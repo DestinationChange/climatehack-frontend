@@ -1,11 +1,10 @@
-import React from 'react';
 
-function FourOFour(props) {
-    return (
+export default function Four0Four(){
+    return(
         <div>
-            <h1>Sorry</h1>
+            <h1>Page Not Found</h1>
+            <div className="ohSnap"/>
         </div>
-    );
+    )
 }
 
-export default FourOFour;
