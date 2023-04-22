@@ -5,6 +5,7 @@ function Profile(props) {
         <div>
             <h1> Profile Page 🌍</h1>
             <div className='background'/>
+            <UserProfile userId={userId} />
         </div>
     );
 }

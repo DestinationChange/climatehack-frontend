@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-function UserProfile(props) {
-    return (
-        <div>
-            
-        </div>
-    );
+function UserProfile({ userId }) {
+  const [userInfo, setUserInfo] = useState(null);
+
+  useEffect(() => {
+    // Call the API endpoint to retrieve the user information
+    fetch(`/api/user/${userId}`)
+      .then(response => response.json())
+      .then(data => setUserInfo(data))
+      .catch(error => console.error(error));
+  }, [userId]);
+
+  if (!userInfo) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <h1>{userInfo.name}</h1>
+      <p>{userInfo.email}</p>
+      <p>{userInfo.phone}</p>
+      <p>{userInfo.address}</p>
+      {/* Display any additional information about the user */}
+    </div>
+  );
 }
 
 export default UserProfile;
+
+//OTHER USERS SEE THIS
