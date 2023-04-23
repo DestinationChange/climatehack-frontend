@@ -4,8 +4,13 @@ import axios from 'axios';
 
 const API = process.env.REACT_APP_API_URL;
 
-function newPosts() {
+function New() {
   let navigate = useNavigate();
+  const [newPosts, setNewPosts] = useState({
+    user_id: 0,
+    content: '',
+    created_at: ''
+  });
 
   const [newPosts, setNewPosts] = useState({
     user_id: 0,
@@ -69,4 +74,4 @@ function newPosts() {
   );
 }
 
-export default NewPosts;
+export default New;
