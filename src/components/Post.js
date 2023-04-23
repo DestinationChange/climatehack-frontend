@@ -5,14 +5,14 @@ import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-function PostDetail() {
+function Post() {
     const { id } = useParams();
     const [post, setPost] = useState({});
     const navigate = useNavigate()
 
     const deletePost = () => {
         axios
-          .delete(`${API}/posts/${id}`)
+          .delete(`${API}/projectDestination/${id}`)
           .then(
             () => {
               navigate(`/posts`);
@@ -28,7 +28,7 @@ function PostDetail() {
 
     useEffect(() => {
         axios
-        .get(`${API}/posts/${id}`)
+        .get(`${API}/projectDestination/${id}`)
         .then((res) => {
             setPost(res.data)
         })
@@ -38,8 +38,6 @@ function PostDetail() {
     }, [id]);
 console.log(post)
     return (
-        <div className="Show">
-
         <div style={{display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center'}}  >
 
              <p>{post.user_id}</p>
@@ -62,8 +60,7 @@ console.log(post)
             </>
           </div>
           </div>
-        </div>
     );
 }
 
-export default PostDetail;
+export default Post;

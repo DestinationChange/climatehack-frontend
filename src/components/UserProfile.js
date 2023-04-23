@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 function UserProfile({ userId }) {
   const [userInfo, setUserInfo] = useState(null);
 
+  const API = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     // Call the API endpoint to retrieve the user information
-    fetch(`/api/user/${userId}`)
+    fetch(`${API}/users/${userId}`)
       .then(response => response.json())
       .then(data => setUserInfo(data))
       .catch(error => console.error(error));
