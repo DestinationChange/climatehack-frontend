@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login"
 import NewPosts from "./components/NewPosts";
 import Profile from "./pages/Profile";
-
+import Prompts from "./pages/Prompts";
 
 // COMPONENTS
 import NavBar from "./components/NavBar";
@@ -29,6 +29,7 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/newPost" element={<NewPosts />} />
+          <Route path='/prompts' element={<Prompts/>}/>
         </Routes>
       </Router>
     </div>

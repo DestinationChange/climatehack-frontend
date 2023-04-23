@@ -9,7 +9,7 @@ function NavBar() {
             <Link to="/posts"><button>Posts</button></Link>
             <Link to="/profile"><button>Profile</button></Link>
             <Link to= "/newPost"><button>New Post</button></Link>
-            {/* <div className='userWelcome'><li>{user? `Welcome, ${user.displayName}`: null}</li></div> */}
+            <Link to='/prompts'><button>Prompts</button></Link>
         </nav>
     );
 }
