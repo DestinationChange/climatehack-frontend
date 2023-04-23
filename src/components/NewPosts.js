@@ -7,23 +7,22 @@ const API = process.env.REACT_APP_API_URL;
 function newPosts() {
   let navigate = useNavigate();
 
+  const [newPosts, setNewPosts] = useState({
+    user_id: 0,
+    content: '',
+    created_at: ''
+  });
+
   const addPost = () => {
     axios
       .post(`${API}/projectDescription`, newPosts)
-      .then(
-        () => {
-          navigate(`/projectDescription`);
+      .then(() => {navigate(`/projectDescription`);
         },
         (error) => console.error(error)
       )
       .catch((c) => console.warn('catch', c));
   };
 
-  const [newPosts, setNewPosts] = useState({
-    user_id: 0,
-    content: '',
-    created_at: ''
-  });
 
   const handleTextChange = (event) => {
     setNewPosts({ ...newPosts, [event.target.id]: event.target.value });
