@@ -12,19 +12,22 @@ function New() {
     created_at: ''
   });
 
-  const addPost = (newPosts) => {
+  const [newPosts, setNewPosts] = useState({
+    user_id: 0,
+    content: '',
+    created_at: ''
+  });
+
+  const addPost = () => {
     axios
       .post(`${API}/projectDescription`, newPosts)
-      .then(
-        () => {
-          navigate(`/projectDescription`);
-          console.log(newPosts)
+      .then(() => {navigate(`/projectDescription`);
         },
         (error) => console.error(error)
       )
       .catch((c) => console.warn('catch', c));
   };
- 
+
 
   const handleTextChange = (event) => {
     setNewPosts({ ...newPosts, [event.target.id]: event.target.value });
