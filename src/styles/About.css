@@ -1,0 +1,31 @@
+.About{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh;
+}
+
+.carousel-container {
+    max-width: 750px;
+}
+
+.display{
+    background-image: url('./assets/DestinationChangeSolid.png');
+    background-size:cover; 
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    overflow: hidden;
+}
+
+.display h2{
+    color: aliceblue;
+}
+
+.aboutpj{
+    inline-size: 500px;
+    overflow-wrap: break-word;
+    margin-left: 30%;
+    /* align-items: center; */
+    display: flex;
+}

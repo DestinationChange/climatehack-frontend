@@ -8,7 +8,7 @@ function NavBar() {
             <Link to="/about"><button role='About Section Button'>About</button></Link>
             <Link to="/posts"><button role='posts Section Button'>Posts</button></Link>
             <Link to="/profile"><button role='User Section Button'>Profile</button></Link>
-            {/* <div className='userWelcome'><li>{user? `Welcome, ${user.displayName}`: null}</li></div> */}
+            <Link to='/prompts'><button>Prompts</button></Link>
         </nav>
     );
 }

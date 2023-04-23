@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login"
 import NewPosts from "./pages/newPosts";
 import Profile from "./pages/Profile";
-
+import Prompts from "./pages/Prompts";
 
 // COMPONENTS
 import NavBar from "./components/NavBar";
@@ -28,7 +28,7 @@ function App() {
           <Route path="*" element={<FourOFour />} />
           <Route path='/about' element={<About/>}/>
           <Route path="/profile" element={<Profile/>}/>
-         
+          <Route path='/prompts' element={<Prompts/>}/>
         </Routes>
       </Router>
     </div>
