@@ -4,26 +4,27 @@ import axios from 'axios';
 
 const API = process.env.REACT_APP_API_URL;
 
-function newPosts() {
+function New() {
   let navigate = useNavigate();
-
-  const addPost = () => {
-    axios
-      .post(`${API}/projectDescription`, newPosts)
-      .then(
-        () => {
-          navigate(`/projectDescription`);
-        },
-        (error) => console.error(error)
-      )
-      .catch((c) => console.warn('catch', c));
-  };
-
   const [newPosts, setNewPosts] = useState({
     user_id: 0,
     content: '',
     created_at: ''
   });
+
+  const addPost = (newPosts) => {
+    axios
+      .post(`${API}/projectDescription`, newPosts)
+      .then(
+        () => {
+          navigate(`/projectDescription`);
+          console.log(newPosts)
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn('catch', c));
+  };
+ 
 
   const handleTextChange = (event) => {
     setNewPosts({ ...newPosts, [event.target.id]: event.target.value });
@@ -70,4 +71,4 @@ function newPosts() {
   );
 }
 
-export default NewPosts;
+export default New;
