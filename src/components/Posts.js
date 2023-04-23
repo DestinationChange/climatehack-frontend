@@ -1,16 +1,31 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Post from "./Post";
+import axios from "axios";
 import '../styles/design.css'
-function Posts(post) {
+
+const API = process.env.REACT_APP_API_URL;
+
+function Posts() {
+    const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${API}/projectDescription`)
+      .then((res) => {setPosts(res.data)})
+      .catch((err) => console.log(err));
+  }, []);
     return (
-        <div>
-          <Link to={`/posts/${post.id}`}>
-          <img src={post.image}></img>
-          </Link>
-          <div>
-            <p>{post.user_id}</p>
-            </div>
-        </div>
+        <div className="posts">
+        <ul className="postes" style={{ listStyle: "none" }}>
+          {posts.map((post) => {
+            return (
+              <li style={{width: '300px', border: '1px black'}} key={post.id}>
+                <Post post={post} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
       );
 }
 
