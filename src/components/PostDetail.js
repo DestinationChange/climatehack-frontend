@@ -12,10 +12,10 @@ function PostDetail() {
 
     const deletePost = () => {
         axios
-          .delete(`${API}/posts/${id}`)
+          .delete(`${API}/projectDescription/${id}`)
           .then(
             () => {
-              navigate(`/posts`);
+              navigate(`/projectDescription`);
             },
             (error) => console.error(error)
           )
@@ -28,7 +28,7 @@ function PostDetail() {
 
     useEffect(() => {
         axios
-        .get(`${API}/posts/${id}`)
+        .get(`${API}/projectDescription/${id}`)
         .then((res) => {
             setPost(res.data)
         })
@@ -38,9 +38,9 @@ function PostDetail() {
     }, [id]);
 console.log(post)
     return (
-        <div className="Show">
+        <div className="postSide">
 
-        <div style={{display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center'}}  >
+        <div>
 
              <p>{post.user_id}</p>
              <img src={post.image} alt="post"></img>
