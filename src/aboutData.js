@@ -42,6 +42,6 @@ export const aboutData = [
         alt: "image6",
         url:
           "https://ca.slack-edge.com/TCVA3PF24-U03CGMHAZ62-690fcc29f236-512",
-        quote: `my name is Natasha! I'm a Full Stack Software Engineer enrolled in Pursuit. When I'm not coding I love to listen to music, hang out with family, and find new escape rooms/ puzzles`
+        quote: `my name is Natasha! I'm a Full Stack Software Engineer enrolled in Pursuit. When I'm not coding I love to listen to music, hang out with family, and find new escape rooms/ puzzles.`
     }
   ];
